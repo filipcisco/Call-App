@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="controlsViewModel"
+            type="com.kapp.call_app.external_call.viewModels.ExternalCallsControlsViewModel" />
+
+        <variable
+            name="callsViewModel"
+            type="com.kapp.call_app.external_call.viewModels.ExternalCallsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/voip_call_extra_buttons_height"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_extra_buttons_background"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/numpad"
+            style="@style/call_options_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{() -> controlsViewModel.showNumpad()}"
+            android:text="@string/call_action_numpad"
+            app:drawableTopCompat="@drawable/ion_numpad"
+            app:layout_constraintBottom_toBottomOf="@id/bluetooth"
+            app:layout_constraintEnd_toStartOf="@id/call_hold"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bluetooth" />
+
+
+        <TextView
+            android:id="@+id/call_hold"
+            style="@style/call_options_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{() -> controlsViewModel.toggleHold()}"
+            android:text="@string/call_on_hold"
+            android:drawableTop="@{controlsViewModel.isCallOnHold == false ? @drawable/bx_pause_call : @drawable/bx_play_call, default=@drawable/bx_pause_call}"
+            app:layout_constraintBottom_toBottomOf="@id/bluetooth"
+            app:layout_constraintEnd_toStartOf="@id/bluetooth"
+            app:layout_constraintStart_toEndOf="@id/numpad"
+            app:layout_constraintTop_toTopOf="@id/bluetooth"
+            app:layout_constraintVertical_bias="0.52"
+            tools:ignore="UseCompatTextViewDrawableXml" />
+
+        <TextView
+            android:id="@+id/bluetooth"
+            style="@style/call_options_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:onClick="@{() -> controlsViewModel.routeToBluetooth()}"
+            android:text="@string/bluetooth"
+            app:drawableTopCompat="@drawable/akar_icons_bluetooth"
+            app:layout_constraintBottom_toTopOf="@id/microphone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/call_hold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/speaker"
+            style="@style/call_options_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@{controlsViewModel.isSpeakerOn == true ? @drawable/bi_speaker_on : @drawable/bi_speaker_off, default=@drawable/bi_speaker_on}"
+            android:gravity="center"
+            android:onClick="@{() -> controlsViewModel.toggleSpeaker()}"
+            android:text="@string/speaker"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/numpad"
+            app:layout_constraintTop_toTopOf="@id/add_call"
+            tools:ignore="UseCompatTextViewDrawableXml" />
+
+        <TextView
+            android:id="@+id/add_call"
+            style="@style/call_options_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{() -> controlsViewModel.goToDialerForNewCall()}"
+            android:text="@string/call_action_add_call"
+            app:drawableTopCompat="@drawable/bx_add_call"
+            app:layout_constraintBottom_toBottomOf="@id/microphone"
+            app:layout_constraintEnd_toStartOf="@id/microphone"
+            app:layout_constraintStart_toEndOf="@id/speaker"
+            app:layout_constraintTop_toTopOf="@id/microphone"/>
+
+        <TextView
+            android:id="@+id/microphone"
+            style="@style/call_options_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@{controlsViewModel.isMicrophoneMuted == true ? @drawable/bx_microphone_on : @drawable/bx_microphone_off, default=@drawable/bx_microphone_off}"
+            android:gravity="center"
+            android:onClick="@{() -> controlsViewModel.toggleMuteMicrophone()}"
+            android:text="@string/turn_microphone_off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/bluetooth"
+            app:layout_constraintTop_toBottomOf="@id/bluetooth"
+            tools:ignore="UseCompatTextViewDrawableXml" />
+
+
+        <TextView
+            style="@style/unread_count_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:background="@drawable/unread_message_count_bg"
+            android:gravity="center"
+            android:text="@{String.valueOf(callsViewModel.inactiveCallsCount), default=1}"
+            android:visibility="@{callsViewModel.inactiveCallsCount == 0 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="@id/add_call"
+            app:layout_constraintStart_toStartOf="@id/add_call"
+            app:layout_constraintTop_toTopOf="@id/add_call" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

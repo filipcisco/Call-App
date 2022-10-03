@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callsViewModel"
+            type="com.kapp.call_app.external_call.viewModels.ExternalCallsViewModel" />
+
+        <variable
+            name="controlsViewModel"
+            type="com.kapp.call_app.external_call.viewModels.ExternalCallsControlsViewModel" />
+
+        <variable
+            name="previewTouchListener"
+            type="android.view.View.OnTouchListener" />
+
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey_color">
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="remote_name,active_call_timer,remote_address" />
+
+            <TextView
+                android:id="@+id/remote_name"
+                style="@style/call_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@{callsViewModel.callContact.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Chronometer
+                android:id="@+id/active_call_timer"
+                style="@style/call_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/remote_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/remote_address"
+                style="@style/call_header_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{callsViewModel.callContact.number}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/remote_name" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/call_header_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="remote_address" />
+
+            <View
+                android:id="@+id/background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/voip_remote_margin"
+                android:background="@drawable/shape_remote_background"
+                app:layout_constraintBottom_toTopOf="@id/hangUpWrapper"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/call_header_barrier" />
+
+            <!--
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:contentDescription="@null"
+                coilVoipContact="@{callsViewModel.currentCallData}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_max="@dimen/voip_contact_avatar_max_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="@dimen/voip_contact_avatar_max_size" />
+            -->
+
+            <RelativeLayout
+                android:id="@+id/hangUpWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/hangup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_call_terminate_background"
+                    android:contentDescription="@string/content_description_terminate_call"
+                    android:onClick="@{() -> callsViewModel.hangUp()}"
+                    android:padding="5dp"
+                    android:src="@drawable/icon_call_hangup"
+                    app:layout_constraintDimensionRatio="W,1.26:1" />
+            </RelativeLayout>
+
+            <include
+                layout="@layout/external_call_voip_buttons_extra"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/voip_call_extra_buttons_height"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="100dp"
+                android:translationY="210dp"
+                android:visibility="@{controlsViewModel.isExtraButtonsEnabled() ? View.VISIBLE : View.GONE, default=visible}"
+                app:callsViewModel="@{callsViewModel}"
+                app:controlsViewModel="@{controlsViewModel}"
+                app:layout_constraintBottom_toTopOf="@id/hangUpWrapper"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_max="@dimen/voip_extra_menu_max_width" />
+
+            <ViewStub
+                android:id="@+id/stubbed_numpad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/external_call_voip_numpad"
+                android:visibility="@{controlsViewModel.numpadVisible ? View.VISIBLE : View.GONE, default=gone}"
+                app:controlsViewModel="@{controlsViewModel}"
+                app:inflatedVisibility="@{controlsViewModel.numpadVisible ? View.VISIBLE : View.GONE}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

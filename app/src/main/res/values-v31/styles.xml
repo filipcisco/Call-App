@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppSplashScreenTheme" parent="AppTheme">
+        <item name="backgroundColor">@color/dark_grey_color</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/vector_linphone_logo</item>
+    </style>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".external_call.ExternalCallActivity">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="controlsViewModel"
+            type="com.kapp.call_app.external_call.viewModels.ExternalCallsControlsViewModel" />
+        <variable
+            name="callViewModel"
+            type="com.kapp.call_app.external_call.viewModels.ExternalCallsViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/content_external_call" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

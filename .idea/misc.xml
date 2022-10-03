@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/button_background_reverse.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/ephemeral_messages.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/file_video.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/gsm_call_pause.xml" value="0.152" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/icon_call_add.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/icon_call_answer.xml" value="0.2385" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/icon_call_numpad.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/icon_call_participants.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/icon_call_stats.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/icon_toggle_mic.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/record_pause_light.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/drawable/shape_extra_buttons_background.xml" value="0.2265" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/activity_call.xml" value="0.1" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/activity_dialer.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/activity_external_call.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/activity_main.xml" value="0.1947463768115942" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/call_incoming_notification_heads_up.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/call_notification.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/content_dialer.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/content_external_call.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/content_main.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/external_call_incoming_notification_heads_up.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/external_call_voip_buttons_incoming.xml" value="0.2164855072463768" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/fragment_calls_list.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/fragment_external_single_call.xml" value="0.2" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/fragment_first.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/fragment_incoming_external_call.xml" value="0.1" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/fragment_outgoing_external_call.xml" value="0.1947463768115942" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/fragment_second.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/outgoing_call_fragment.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/voip_buttons.xml" value="0.1947463768115942" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/voip_buttons_audio_routes.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/voip_buttons_extra.xml" value="0.176" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/voip_buttons_incoming.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/voip_buttons_outgoing.xml" value="0.1" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/voip_call_stats.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Ndiog/AndroidStudioProjects/Call_App/app/src/main/res/layout/voip_numpad.xml" value="0.1947463768115942" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/external_call_nav_graph"
+    app:startDestination="@id/externalSingleCallFragment">
+
+    <fragment
+        android:id="@+id/externalSingleCallFragment"
+        android:name="com.kapp.call_app.external_call.fragment.ExternalSingleCallFragment"
+        tools:layout="@layout/fragment_external_single_call"
+        android:label="SingleCallFragment" >
+        <action
+            android:id="@+id/action_externalSingleCallFragment_to_callsListFragment"
+            app:destination="@id/externalCallsListFragment" />
+    </fragment>
+
+    <action android:id="@+id/action_global_externalSingleCallFragment"
+        app:destination="@id/externalSingleCallFragment" />
+    <fragment
+        android:id="@+id/externalCallsListFragment"
+        android:name="com.kapp.call_app.external_call.fragment.ExternalSingleCallFragment"
+        tools:layout="@layout/fragment_calls_list"
+        android:label="CallsListFragment" />
+
+    <action android:id="@+id/action_global_externalCallsListFragment"
+        app:destination="@id/externalCallsListFragment" />
+    <fragment
+        android:id="@+id/external_incoming_call_fragment"
+        android:name="com.kapp.call_app.external_call.fragment.IncomingExternalCallFragment"
+        tools:layout="@layout/fragment_incoming_external_call"
+        android:label="IncomingCallFragment">
+
+        <action
+            android:id="@+id/action_externalIncomingCallFragment_to_singleCallFragment"
+            app:destination="@id/externalSingleCallFragment" />
+    </fragment>
+
+    <action android:id="@+id/action_global_externalIncomingCallFragment"
+        app:destination="@id/external_incoming_call_fragment" />
+    <fragment
+        android:id="@+id/externalOutgoing_call_fragment"
+        android:name="com.kapp.call_app.external_call.fragment.OutgoingExternalCallFragment"
+        tools:layout="@layout/fragment_outgoing_external_call"
+        android:label="OutgoingCallFragment">
+
+        <action
+            android:id="@+id/action_external_outgoingCallFragment_to_singleCallFragment"
+            app:destination="@id/externalSingleCallFragment" />
+    </fragment>
+
+    <action android:id="@+id/action_global_externalOutgoingCallFragment"
+        app:destination="@id/externalOutgoing_call_fragment" />
+
+</navigation>
+
